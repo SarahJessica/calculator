@@ -8,9 +8,10 @@ var operator = '';
 function init(){
   $('.number').click(clickNumber);
   $('#decimal').click(clickDecimal);
-  $('#display').click(clear);
+  $('#ac').click(clear);
   $('.operator').click(clickOperator);
   $('#equal').click(performCalculation);
+  $('#popUp').click(popOut);
 }
 
 function clickNumber(){
@@ -55,3 +56,14 @@ function performCalculation() {
   }
   $('#display').text(result);
 }
+
+function popOut() {
+  $('#Popup').click(function() {
+   var NWin = window.open($(this).prop('calculator.html'), '',
+   'height=800,width=800');
+   if (window.focus)
+   {
+     NWin.focus();}
+     return false;
+   });
+  }
